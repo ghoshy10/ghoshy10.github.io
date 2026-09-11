@@ -586,6 +586,48 @@
     .program-card { padding: 36px 28px 32px; }
     footer { padding: 28px 30px; flex-direction: column; gap: 12px; text-align: center; }
     .availability-row { flex-direction: column; gap: 6px; }
+    .calendly-block { margin-top: 36px; }
+  }
+
+  .calendly-block {
+    max-width: 680px;
+    margin-top: 48px;
+  }
+
+  .calendly-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 36px;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--ink-mid);
+  }
+
+  .calendly-divider::before,
+  .calendly-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(61,92,63,0.18);
+  }
+
+  .calendly-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--forest);
+    margin-bottom: 10px;
+  }
+
+  .calendly-sub {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink-mid);
+    margin-bottom: 24px;
+    max-width: 600px;
   }
 </style>
 </head>
@@ -631,6 +673,10 @@
   <div class="availability-row">
     <span class="availability-label">Limited Availability</span>
     <span class="availability-text">I work with a small number of students at a time — each one gets focused, personalized attention, not a one-size-fits-all program.</span>
+  </div>
+  <div class="availability-row" style="border-top:none; padding-top:0; margin-top:10px;">
+    <span class="availability-label">Time Zones</span>
+    <span class="availability-text">Based in the UK — flexible across US Eastern, Central, Asia, and Gulf time zones.</span>
   </div>
 </section>
 
@@ -681,7 +727,7 @@
       <div class="program-badge">Most Popular</div>
       <div class="program-tag">Committed &middot; 10 Sessions</div>
       <div class="program-title">AP Biology Weekly Tutoring</div>
-      <div class="program-price">$100<span>Per Hour</span></div>
+      <div class="program-price" style="font-size:24px;">Contact<span>For Rate</span></div>
       <p class="program-body">A 10-session package, paid upfront, held weekly. Available after your free introductory call. Renewable for another 10 sessions once complete.</p>
       <ul class="program-features">
         <li>Weekly 60-minute sessions</li>
@@ -695,7 +741,7 @@
     <div class="program-card">
       <div class="program-tag">Flexible &middot; As Needed</div>
       <div class="program-title">AP Biology Flexible Tutoring</div>
-      <div class="program-price">$125<span>Per Hour</span></div>
+      <div class="program-price" style="font-size:24px;">Contact<span>For Rate</span></div>
       <p class="program-body">No package — book sessions flexibly. Can be weekly or biweekly as you need them. Ideal for targeted prep.</p>
       <ul class="program-features">
         <li>Sessions scheduled only when you need them</li>
@@ -800,6 +846,13 @@
     </div>
     <button type="submit" class="form-submit">Send enquiry →</button>
   </form>
+
+  <div class="calendly-block">
+    <div class="calendly-divider"><span>Or</span></div>
+    <h3 class="calendly-heading">Schedule a call directly</h3>
+    <p class="calendly-sub">Prefer to pick your own time? Choose a slot below for a free 20-minute introductory call on Microsoft Teams — you'll still be asked a few quick questions about your student as part of booking.</p>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/ghoshs-bu/30min" style="min-width:320px;height:700px;"></div>
+  </div>
 </section>
 
 <footer>
@@ -815,6 +868,8 @@
     if (msg) msg.classList.add('show');
   }
 </script>
+
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 </body>
 </html>
